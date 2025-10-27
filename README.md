@@ -252,44 +252,6 @@ Materialized view (example)
 
 ---
 
-## 🚀 Usage & setup
-
-Prerequisites
-- Python 3.10+
-- PostgreSQL 12+
-- .env file with DATABASE_URL (e.g., postgresql+psycopg2://user:pass@host:5432/dbname)
-
-Quick start
-1. Install dependencies:
-   pip install -r requirements.txt
-
-2. Create DB schema (run SQL migrations or psql scripts). Ensure views, triggers, functions, and materialized view are created.
-
-3. Set environment variable:
-   export DATABASE_URL="postgresql+psycopg2://user:pass@host:5432/dbname"
-
-4. Start the API:
-   uvicorn main:app --reload
-
-5. Use the API endpoints to create users, categories, transactions, budgets and to fetch analytics.
-
-CSV export
-- GET /analytics/export-monthly-report?user_id=1&month_year=2025-10-01
-  Returns a CSV with Date, Category, Type, Amount, Description.
-
----
-
-## 🧰 Troubleshooting & notes
-
-- Database connections: If startup fails, check DATABASE_URL correctness and network access to the DB host.
-- Materialized view staleness: schedule periodic REFRESH MATERIALIZED VIEW or expose a refresh endpoint if you need fresh data after heavy writes.
-- Stored procedure output: RAISE NOTICE messages appear in DB logs — for API-friendly responses persist results to a table if you need structured results.
-- Triggers and heavy write rates: ensure triggers are efficient; consider background jobs for expensive recalculations.
-- Pagination: endpoints currently return full result sets — add LIMIT/OFFSET for large datasets.
-- Security: allow_origins is "*" in CORS for development. Restrict origins in production and secure DB credentials.
-
----
-
 ## UI / Dashboard
 
 Add your dashboard screenshots to the assets/ directory and reference them here:
@@ -303,10 +265,3 @@ Add your dashboard screenshots to the assets/ directory and reference them here:
 
 ---
 
-If you'd like, I can:
-- generate a smaller "Quick Start" script or database migration SQL,
-- add example cURL requests for each endpoint,
-- or create a CONTRIBUTING section and issue templates next.
-
-
-```
