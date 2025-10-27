@@ -78,7 +78,7 @@ Sample output (columns: user_id, username, month_year, total_income, total_expen
 
 | user_id | username  | month_year | total_income | total_expenses | net_balance | monthly_budget | remaining_budget |
 |--------:|-----------|-----------:|-------------:|---------------:|------------:|---------------:|-----------------:|
-| 1       | rajat     | 2025-10-01 | 5000.00      | 2500.00        | 2500.00     | 3000.00        | 500.00           |
+| 1       | Aditi     | 2025-10-01 | 5000.00      | 2500.00        | 2500.00     | 3000.00        | 500.00           |
 
 ---
 
@@ -97,8 +97,8 @@ Sample output (columns: user_id, category_name, month_year, total_spent, transac
 
 | user_id | username | month_year | category_name | total_spent | transaction_count |
 |--------:|---------:|-----------:|---------------|-----------:|------------------:|
-| 1       | rajat    | 2025-10-01 | Groceries     | 450.00     | 6                 |
-| 1       | rajat    | 2025-10-01 | Rent          | 1500.00    | 1                 |
+| 1       | Aditi    | 2025-10-01 | Groceries     | 450.00     | 6                 |
+| 1       | Aditi    | 2025-10-01 | Rent          | 1500.00    | 1                 |
 
 ---
 
@@ -106,7 +106,7 @@ Sample output (columns: user_id, category_name, month_year, total_spent, transac
 
 SQL
 ```sql
-SELECT * FROM category_spending_analysis WHERE username = 'rajat' ORDER BY year DESC, month DESC, total_amount DESC LIMIT 10;
+SELECT * FROM category_spending_analysis WHERE username = 'Aditi' ORDER BY year DESC, month DESC, total_amount DESC LIMIT 10;
 ```
 
 Significance
@@ -117,7 +117,7 @@ Sample output (columns: username, category_name, year, month, total_amount, tran
 
 | username | category_name | year | month | total_amount | transaction_count | avg_transaction_amount |
 |---------:|---------------|-----:|------:|-------------:|------------------:|----------------------:|
-| rajat    | Groceries     | 2025 | 10    | 450.00      | 6                 | 75.00                 |
+| Aditi    | Groceries     | 2025 | 10    | 450.00      | 6                 | 75.00                 |
 
 ---
 
@@ -125,7 +125,7 @@ Sample output (columns: username, category_name, year, month, total_amount, tran
 
 SQL
 ```sql
-SELECT * FROM budget_vs_actual WHERE username = 'rajat' AND month_year = '2025-10-01';
+SELECT * FROM budget_vs_actual WHERE username = 'Aditi' AND month_year = '2025-10-01';
 ```
 
 Significance
@@ -136,7 +136,7 @@ Sample output (columns: username, category_name, month_year, budgeted_amount, ac
 
 | username | category_name | month_year | budgeted_amount | actual_spent | difference | status      |
 |---------:|---------------|-----------:|----------------:|------------:|----------:|------------:|
-| rajat    | Groceries     | 2025-10-01 | 400.00          | 450.00     | -50.00    | Over Budget |
+| Aditi    | Groceries     | 2025-10-01 | 400.00          | 450.00     | -50.00    | Over Budget |
 
 ---
 
@@ -264,4 +264,5 @@ Add your dashboard screenshots to the assets/ directory and reference them here:
 
 
 ---
+
 
